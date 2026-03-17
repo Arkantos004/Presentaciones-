@@ -1,0 +1,372 @@
+.estrategia-container {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #4facfe 50%, #00f2fe 75%, #43e97b 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.estrategia-header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.estrategia-header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.estrategia-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.estrategia-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto 50px;
+}
+
+.estrategia-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border-left: 6px solid;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.estrategia-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.estrategia-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.estrategia-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.estrategia-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.estrategia-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  padding: 25px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.fo .emoji {
+  animation-delay: 0s;
+}
+
+.do .emoji {
+  animation-delay: 0.5s;
+}
+
+.fa .emoji {
+  animation-delay: 1s;
+}
+
+.da .emoji {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.strategy-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.strategy-item:hover {
+  border-color: #adb5bd;
+  background: #f0f1f3;
+  transform: translateX(5px);
+}
+
+.strategy-item:last-child {
+  margin-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.item-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.fo .item-number {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.do .item-number {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.fa .item-number {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
+
+.da .item-number {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.item-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.item-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.item-content.expanded {
+  max-height: 300px;
+}
+
+.item-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #adb5bd;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.strategy-item:hover .expand-icon {
+  color: #667eea;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.legend-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.legend-item span:last-child {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Responsive - Para tablets */
+@media (max-width: 1024px) {
+  .estrategia-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .estrategia-header h1 {
+    font-size: 2.8rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive - Para móviles */
+@media (max-width: 768px) {
+  .estrategia-container {
+    padding: 30px 15px;
+  }
+
+  .estrategia-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .estrategia-header {
+    margin-bottom: 30px;
+  }
+
+  .estrategia-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .estrategia-header p {
+    font-size: 1rem;
+  }
+
+  .card-header {
+    padding: 20px;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .emoji {
+    font-size: 1.8rem;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .strategy-item {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
+  .item-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  .item-header h3 {
+    font-size: 0.9rem;
+  }
+
+  .item-content p {
+    font-size: 0.9rem;
+  }
+
+  .legend {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .expand-icon {
+    margin-top: -30px;
+  }
+}

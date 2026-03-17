@@ -1,0 +1,222 @@
+.foda-container {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.foda-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.foda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+  grid-auto-rows: max-content;
+}
+
+.foda-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-self: start;
+}
+
+.foda-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.foda-header {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.foda-header:hover {
+  opacity: 0.9;
+}
+
+.foda-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex: 1;
+  text-align: center;
+}
+
+.foda-toggle-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.foda-toggle-icon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Colores específicos para cada sección */
+.fortalezas .foda-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.debilidades .foda-header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.oportunidades .foda-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.amenazas .foda-header {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.foda-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.foda-list.show {
+  max-height: 2000px;
+  padding: 25px;
+  opacity: 1;
+}
+
+.foda-list li {
+  margin-bottom: 20px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.6;
+  color: #333;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+.foda-list li:last-child {
+  margin-bottom: 0;
+}
+
+.foda-item {
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.foda-item.expanded {
+  max-height: 500px;
+}
+
+.item-text {
+  display: block;
+  word-break: break-word;
+}
+
+.fortalezas .foda-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.debilidades .foda-list li::before {
+  content: '⚠';
+  position: absolute;
+  left: 0;
+  color: #f5576c;
+  font-size: 1rem;
+}
+
+.oportunidades .foda-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #4facfe;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.amenazas .foda-list li::before {
+  content: '!';
+  position: absolute;
+  left: 0;
+  color: #fa709a;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.foda-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive - Para tablets */
+@media (max-width: 1024px) {
+  .foda-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .foda-title {
+    font-size: 2rem;
+  }
+
+  .foda-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive - Para móviles */
+@media (max-width: 768px) {
+  .foda-container {
+    padding: 20px 15px;
+  }
+
+  .foda-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .foda-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .foda-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .foda-list {
+    padding: 20px;
+  }
+
+  .foda-list li {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+}
